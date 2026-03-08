@@ -1,8 +1,12 @@
+/root/autoresearch/.venv/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/root/autoresearch/.venv/lib/python3.10/site-packages/sklearn/utils/validation.py:2749: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
 Dataset already cached at /root/.cache/autoresearch-tabular/adult.data
 ---
-val_accuracy:     0.859440
-val_auc:          0.915793
-training_seconds: 0.3
-total_seconds:    0.4
+val_accuracy:     0.867064
+val_auc:          0.923013
+training_seconds: 0.5
+total_seconds:    0.6
 n_features:       14
 n_train_samples:  18096

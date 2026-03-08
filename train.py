@@ -1,10 +1,10 @@
 """
-train.py — Experiment 3: XGBoost default params
-Hypothesis: gradient boosting should beat random forest on this dataset
+train.py — Experiment 4: LightGBM default params
+Hypothesis: LightGBM is often faster and matches XGBoost on tabular data
 """
 
 import time
-from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
 
 from prepare import (
     X_train, X_val, y_train, y_val,
@@ -12,11 +12,11 @@ from prepare import (
     evaluate,
 )
 
-model = XGBClassifier(
+model = LGBMClassifier(
     n_estimators=300,
-    eval_metric="logloss",
     random_state=42,
     n_jobs=-1,
+    verbose=-1,
 )
 
 t0 = time.time()
