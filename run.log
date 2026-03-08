@@ -4,8 +4,8 @@
   warnings.warn(
 Dataset already cached at /root/.cache/autoresearch-tabular/adult.data
 ---
-val_accuracy:     0.867064
-val_auc:          0.923013
+val_accuracy:     0.871374
+val_auc:          0.927993
 training_seconds: 0.5
 total_seconds:    0.6
 n_features:       14
