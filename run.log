@@ -1,8 +1,8 @@
 Dataset already cached at /root/.cache/autoresearch-tabular/adult.data
 ---
-val_accuracy:     0.857616
-val_auc:          0.908707
-training_seconds: 2.0
-total_seconds:    2.3
+val_accuracy:     0.859440
+val_auc:          0.915793
+training_seconds: 0.3
+total_seconds:    0.4
 n_features:       14
 n_train_samples:  18096

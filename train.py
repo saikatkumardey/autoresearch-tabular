@@ -1,10 +1,10 @@
 """
-train.py — Experiment 2: RandomForest n_estimators=200
-Hypothesis: ensemble of decision trees should outperform LR on this tabular data
+train.py — Experiment 3: XGBoost default params
+Hypothesis: gradient boosting should beat random forest on this dataset
 """
 
 import time
-from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 
 from prepare import (
     X_train, X_val, y_train, y_val,
@@ -12,7 +12,12 @@ from prepare import (
     evaluate,
 )
 
-model = RandomForestClassifier(n_estimators=200, n_jobs=-1, random_state=42)
+model = XGBClassifier(
+    n_estimators=300,
+    eval_metric="logloss",
+    random_state=42,
+    n_jobs=-1,
+)
 
 t0 = time.time()
 model.fit(X_train, y_train)

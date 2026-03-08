@@ -1,2 +1,3 @@
 commit	val_auc	status	description
 089b098	0.860703	keep	baseline LogisticRegression C=1.0
+2c1d5e6	0.908707	keep	RandomForest n_estimators=200
