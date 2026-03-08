@@ -1,14 +1,10 @@
 """
-train.py — The only file the agent modifies.
-
-Baseline: LogisticRegression. The agent replaces/improves this:
-try XGBoost, LightGBM, MLP, ensembles, feature engineering, stacking, etc.
-
-Usage: uv run train.py
+train.py — Experiment 2: RandomForest n_estimators=200
+Hypothesis: ensemble of decision trees should outperform LR on this tabular data
 """
 
 import time
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 
 from prepare import (
     X_train, X_val, y_train, y_val,
@@ -16,22 +12,10 @@ from prepare import (
     evaluate,
 )
 
-# ---------------------------------------------------------------------------
-# Model — change everything below this line
-# ---------------------------------------------------------------------------
-
-model = LogisticRegression(max_iter=1000, C=1.0, solver="lbfgs")
-
-# ---------------------------------------------------------------------------
-# Training (measure wall-clock training time)
-# ---------------------------------------------------------------------------
+model = RandomForestClassifier(n_estimators=200, n_jobs=-1, random_state=42)
 
 t0 = time.time()
 model.fit(X_train, y_train)
 training_seconds = time.time() - t0
-
-# ---------------------------------------------------------------------------
-# Evaluation (do not modify)
-# ---------------------------------------------------------------------------
 
 results = evaluate(model, training_seconds)

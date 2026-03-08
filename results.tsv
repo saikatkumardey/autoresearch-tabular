@@ -1,1 +1,2 @@
 commit	val_auc	status	description
+089b098	0.860703	keep	baseline LogisticRegression C=1.0
