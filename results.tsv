@@ -2,3 +2,12 @@ commit	val_auc	status	description
 089b098	0.860703	keep	baseline LogisticRegression C=1.0
 2c1d5e6	0.908707	keep	RandomForest n_estimators=200
 bb7f632	0.915793	keep	XGBoost n=300 default params
+0f90be2	0.923013	keep	LightGBM n=300 default params
+fba80e5	0.919659	discard	LightGBM n=1000 lr=0.05 depth=8 (worse)
+265f95f	0.927993	keep	LightGBM n=2000 lr=0.05 early_stopping=50
+2a1a0f5	0.927712	discard	XGBoost n=2000 lr=0.05 early_stopping=50 (no improvement)
+b1fc379	0.926691	discard	LightGBM + log transforms + interactions (worse)
+91b92ba	0.921991	discard	VotingClassifier LGBM+XGB+RF soft (worse)
+79adfb8	0.926138	discard	LightGBM dart booster drop_rate=0.1 (slower, worse)
+647b3c1	0.924186	discard	HistGradientBoosting sklearn (worse than LGBM)
+652fd58	0.920197	discard	Stacking LGBM+XGB + LR meta cv=3 (worse, 5s)
